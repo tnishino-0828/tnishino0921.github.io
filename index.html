@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- 追加のCSSファイルはこの下に配置。順番に気をつける -->
+    <link href="css/pushbar.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <title>サイトのタイトル</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="headerin">
+        <h1>
+          <a href="/">
+            <img src="img/logo.svg" alt="FA EXHIBITION">
+          </a>
+        </h1>
+        <button class="button" data-pushbar-target="mypushbar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+    <section class="gallery-dl">
+      <div class="keyvisual">
+        <div class="lists">
+          <div class="image">
+            <img src="img/mainvisual1.jpg" width="1200" height="1800" alt="">
+          </div>
+          <div class="image">
+            <img src="img/mainvisual2.jpg" width="1200" height="1800" alt="">
+          </div>
+          <div class="image">
+            <img src="img/mainvisual3.jpg" width="1200" height="1800" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="title container">
+        <h1>
+          Hello Flower!<br>FA EXHIBITION 2021
+        </h1>
+      </div>
+      <div class="information container">
+        <h2>
+          INFORMATION
+        </h2>
+        <div class="text">
+          <div class="schedule_en">
+            <div class="date">
+              2021 JUL 1(THU)-3(SAT)
+            </div>
+            <div class="time">
+              DAY1 10am-6pm OTHER 10am-5:30pm
+            </div>
+          </div>
+          <div class="place">
+            at PARK SIDE HALL
+          </div>
+          <div class="schedule_ja">
+            2021年7月1日(木)ー3日(土)<br>Day1 10時〜18時　その他 10時〜17時30分
+          </div>
+        </div>
+      </div>
+      <div class="gallery container">
+        <h2>
+          GALLERY
+        </h2>
+        <div class="flower">
+          <div class="image">
+            <img src="img/flower1.jpg" width="800" height="1100" alt="">
+          </div>
+          <div class="image">
+            <img src="img/flower2.jpg" width="800" height="530" alt="">
+          </div>
+          <div class="image">
+            <img src="img/flower3.jpg" width="800" height="800" alt="">
+          </div>
+          <div class="image">
+            <img src="img/flower4.jpg" width="800" height="1200" alt="">
+          </div>
+          <div class="image">
+            <img src="img/flower5.jpg" width="800" height="1000" alt="">
+          </div>
+          <div class="image">
+            <img src="img/flower6.jpg" width="800" height="530" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="access_bg"></div>
+      <div class="access">
+        <div class="text container">
+          <h2>
+            ACCESS
+          </h2>
+          <div class="hall">
+            PARK SIDE HALL
+          </div>
+          <div class="address">
+            〒152-0035 東京都目黒区自由が丘1-1-1 PARK SIDE HALL<br>PARK SIDE HALL, 1-1-1 Jiyugaoka, Meguro-ku, Tokyo
+          </div>
+          <div class="mail">
+            Tel: 03-1111-1111<br>E-mail: info@xxxxxxx.jp
+          </div>
+          <div class="map">
+            <a href="#">
+              GOOGLE MAP
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="contact container">
+        <h2>
+          CONTACT
+        </h2>
+        <div class="exhibition">
+          <a href="#">
+            出展に関するお問い合わせ
+          </a>
+        </div>
+        <div class="forvisitor">
+          <a href="#">
+            その他のお問い合わせ
+          </a>
+        </div>
+      </div>
+    </section>
+    <div class="sidebar">
+      <div class="link">
+        <div class="item">
+          <a href="#">
+            FORVISITOR
+          </a>
+        </div>
+        <div class="item">
+          <a href="#">
+            FOREXHIBITOR
+          </a>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="footerin">
+        <div class="information">
+          <div class="address">
+            FA exhibition<br>
+            〒152-0035 東京都目黒区自由が丘1-1-1 PARK SIDE HALL<br>
+            <div class="tel">
+              Tel: <a href="tel:03-1111-1111">03-1111-1111</a>
+            </div>
+            <div class="mail">
+              E-mail: info@xxxxxxx.jp
+            </div>
+          </div>
+          <div class="sns">
+            <div class="item">
+              <a href="#">
+                Twitter
+              </a>
+            </div>
+            <div class="item">
+              <a href="#">
+                Facebook
+              </a>
+            </div>
+            <div class="item">
+              <a href="#">
+                Instagram
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="link">
+          <div class="policy">
+            <a href="#">
+              PRIVACY POLICY
+            </a>
+          </div>
+          <div class="copyright">
+            © FA EXHIBITION
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/pushbar.min.js"></script>
+    <script type="text/javascript">
+      new Pushbar({
+        blur: true,
+        overlay: true,
+      });
+    </script>
+
+    <script>
+      window.addEventListener('scroll', function() {
+        var header = document.querySelector('.header');
+          if (window.scrollY < 700) {
+            header.classList.remove('show');
+          } else {
+            header.classList.add('show');
+          }
+      });
+    </script>
+
+    <script>
+      window.addEventListener('scroll', function() {
+        var sidebar = document.querySelector('.sidebar');
+          if (window.scrollY < 700) {
+            sidebar.classList.remove('fade');
+          } else {
+            sidebar.classList.add('fade');
+          }
+      });
+    </script>
+
+    <script>
+      window.addEventListener('scroll', function() {
+        var accessSection = document.querySelector('.access');
+        var backgroundImage = document.querySelector('.access_bg');
+        var accessPosition = accessSection.getBoundingClientRect();
+        
+        // アクセスセクションが画面内に表示されたら背景を表示
+        if (accessPosition.top <= window.innerHeight && accessPosition.bottom >= 0) {
+          backgroundImage.classList.add('show');
+        } else {
+          backgroundImage.classList.remove('show');
+        }
+      });
+    </script>
+
+  </body>
+</html>
