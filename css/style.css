@@ -1,0 +1,756 @@
+@charset "UTF-8";
+/* bodyのデフォルトを定義 */
+body {
+  text-rendering: optimizeSpeed;
+  line-height: 1.8;
+  font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", Meiryo, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  font-feature-settings: "palt";
+}
+@media (min-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+}
+
+/* marginとpaddingを削除 */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+figure,
+blockquote,
+dl,
+dd,
+ul,
+ol,
+li {
+  margin: 0;
+  padding: 0;
+}
+
+/* pが連続したら段落を空ける */
+p + p {
+  margin-top: 1em;
+}
+
+/* list-styleを削除 */
+ul,
+ol {
+  list-style: none;
+}
+
+/* imgとpictureタグの設定 */
+img,
+picture {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+/* 各ブラウザやOSの設定で動きの制限をしている場合、すべてのアニメーションとトランジションを削除 */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/* aタグのテキストカラーを親要素から継承と、ホバー時のアニメーション */
+a {
+  color: inherit;
+}
+@media screen and (min-width: 768px) {
+  a {
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+}
+a:hover, a:focus {
+  text-decoration: none;
+  color: inherit;
+}
+@media screen and (min-width: 768px) {
+  a:hover, a:focus {
+    opacity: 0.7;
+    text-decoration: none;
+  }
+}
+@media screen and (min-width: 768px) {
+  a:hover img {
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+  }
+}
+
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+[data-pushbar-id] {
+  background-color: #050507;
+}
+[data-pushbar-id] div.headerin button {
+  position: relative;
+  border: none;
+  background-color: initial;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 9px;
+}
+[data-pushbar-id] div.headerin button span {
+  display: block;
+  background-color: #FFFFFF;
+  width: 30px;
+  height: 1px;
+  position: absolute;
+  content: "";
+  right: 5px;
+}
+@media (min-width: 768px) {
+  [data-pushbar-id] div.headerin button span {
+    right: 25px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  [data-pushbar-id] div.headerin button span {
+    right: 8px;
+  }
+}
+[data-pushbar-id] div.headerin button span:nth-child(1) {
+  transform: rotate(45deg);
+}
+[data-pushbar-id] div.headerin button span:nth-child(2) {
+  transform: rotate(135deg);
+}
+[data-pushbar-id] div.menubox div.lists div.item {
+  text-align: center;
+}
+[data-pushbar-id] div.menubox div.lists div.item a {
+  line-height: 16px;
+  letter-spacing: 0;
+  color: #FFFFFF;
+}
+
+header.header {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+header.header div.headerin h1 {
+  position: fixed;
+  top: 15px;
+  left: 25px;
+  z-index: 1;
+}
+@media (min-width: 768px) {
+  header.header div.headerin h1 {
+    top: 0;
+  }
+}
+header.header div.headerin h1 a {
+  color: #FFFFFF;
+}
+header.header div.headerin button.button {
+  position: fixed;
+  top: 30px;
+  right: 25px;
+  border: none;
+  background-color: initial;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  z-index: 1;
+}
+header.header div.headerin button.button span {
+  display: block;
+  background-color: #FFFFFF;
+  width: 30px;
+  height: 1px;
+}
+header.show {
+  opacity: 1;
+}
+
+section.gallery-dl {
+  background-color: #050507;
+  padding-bottom: 200px;
+}
+section.gallery-dl div.keyvisual div.lists {
+  display: flex;
+  justify-content: center;
+}
+@media (min-width: 768px) {
+  section.gallery-dl div.keyvisual div.lists div.image {
+    width: 33.3333333333%;
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+}
+section.gallery-dl div.keyvisual div.lists div.image img {
+  width: 100%;
+}
+section.gallery-dl div.title {
+  text-align: center;
+  margin-top: 50px;
+}
+@media (min-width: 768px) {
+  section.gallery-dl div.title {
+    margin-top: 100px;
+  }
+}
+section.gallery-dl div.title h1 {
+  font-size: 38px;
+  line-height: 48px;
+  letter-spacing: 0.03em;
+  color: #FFFFFF;
+}
+@media (min-width: 768px) {
+  section.gallery-dl div.title h1 {
+    font-size: 100px;
+    line-height: 125px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  section.gallery-dl div.title h1 {
+    font-size: 63px;
+    line-height: 72px;
+  }
+}
+section.gallery-dl div.information {
+  text-align: center;
+  margin-top: 50px;
+}
+@media (min-width: 768px) {
+  section.gallery-dl div.information {
+    margin-top: 100px;
+  }
+}
+section.gallery-dl div.information h2 {
+  font-size: 27px;
+  font-weight: 300;
+  line-height: 32px;
+  letter-spacing: 0;
+  color: #FFFFFF;
+  position: relative;
+  display: inline-block;
+}
+@media (min-width: 768px) {
+  section.gallery-dl div.information h2 {
+    font-size: 60px;
+    line-height: 64px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  section.gallery-dl div.information h2 {
+    font-size: 53px;
+    line-height: 96px;
+  }
+}
+section.gallery-dl div.information h2::after {
+  position: absolute;
+  content: "";
+  background-color: #FFFFFF;
+  width: 100%;
+  height: 1px;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+section.gallery-dl div.information div.text {
+  margin-top: 45px;
+}
+section.gallery-dl div.information div.text div.schedule_en {
+  line-height: 24px;
+  letter-spacing: 0;
+  color: #FFFFFF;
+}
+@media (min-width: 768px) {
+  section.gallery-dl div.information div.text div.schedule_en {
+    font-size: 20px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  section.gallery-dl div.information div.text div.schedule_en {
+    font-size: 17px;
+  }
+}
+section.gallery-dl div.information div.text div.place {
+  font-size: 27px;
+  font-weight: bold;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: #FFFFFF;
+  margin-top: 20px;
+}
+@media (min-width: 768px) {
+  section.gallery-dl div.information div.text div.place {
+    font-size: 40px;
+    line-height: 48px;
+  }
+}
+section.gallery-dl div.information div.text div.schedule_ja {
+  line-height: 24px;
+  letter-spacing: 0;
+  color: #FFFFFF;
+  margin-top: 17px;
+}
+@media (min-width: 768px) {
+  section.gallery-dl div.information div.text div.schedule_ja {
+    font-size: 18px;
+  }
+}
+section.gallery-dl div.gallery {
+  text-align: center;
+  margin-top: 79px;
+}
+@media (min-width: 768px) {
+  section.gallery-dl div.gallery {
+    width: 800px;
+    margin: 139px auto 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  section.gallery-dl div.gallery {
+    width: initial;
+  }
+}
+section.gallery-dl div.gallery h2 {
+  font-size: 27px;
+  line-height: 32px;
+  letter-spacing: 0;
+  color: #FFFFFF;
+  position: relative;
+  display: inline-block;
+}
+@media (min-width: 768px) {
+  section.gallery-dl div.gallery h2 {
+    font-size: 60px;
+    line-height: 64px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  section.gallery-dl div.gallery h2 {
+    font-size: 53px;
+    line-height: 96px;
+  }
+}
+section.gallery-dl div.gallery h2::after {
+  position: absolute;
+  content: "";
+  background-color: #FFFFFF;
+  width: 100%;
+  height: 1px;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+section.gallery-dl div.gallery div.flower {
+  margin-top: 45px;
+}
+@media (min-width: 768px) {
+  section.gallery-dl div.gallery div.flower div.image img {
+    width: 48%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  section.gallery-dl div.gallery div.flower div.image img {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  section.gallery-dl div.gallery div.flower div.image:nth-child(odd) {
+    text-align: left;
+  }
+}
+@media (min-width: 768px) {
+  section.gallery-dl div.gallery div.flower div.image:nth-child(even) {
+    text-align: right;
+  }
+}
+section.gallery-dl div.gallery div.flower div.image + .image {
+  margin-top: 30px;
+}
+@media (min-width: 768px) {
+  section.gallery-dl div.gallery div.flower div.image + .image {
+    margin-top: 60px;
+  }
+}
+section.gallery-dl .access_bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+section.gallery-dl .access_bg.show {
+  opacity: 1;
+}
+section.gallery-dl div.access {
+  text-align: center;
+  margin-top: 280px;
+}
+@media (min-width: 768px) {
+  section.gallery-dl div.access {
+    margin-top: 480px;
+  }
+}
+section.gallery-dl div.access div.text {
+  position: relative;
+  content: "";
+  left: 0;
+  top: 50%;
+}
+section.gallery-dl div.access div.text h2 {
+  font-size: 27px;
+  line-height: 32px;
+  letter-spacing: 0.03em;
+  color: #FFFFFF;
+  position: relative;
+  display: inline-block;
+}
+@media (min-width: 768px) {
+  section.gallery-dl div.access div.text h2 {
+    font-size: 60px;
+    line-height: 64px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  section.gallery-dl div.access div.text h2 {
+    font-size: 53px;
+    line-height: 96px;
+  }
+}
+section.gallery-dl div.access div.text h2::after {
+  position: absolute;
+  content: "";
+  background-color: #FFFFFF;
+  width: 100%;
+  height: 1px;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+section.gallery-dl div.access div.text div.hall {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 24px;
+  letter-spacing: 0;
+  color: #FFFFFF;
+  margin-top: 45px;
+}
+@media (min-width: 768px) {
+  section.gallery-dl div.access div.text div.hall {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+section.gallery-dl div.access div.text div.address {
+  line-height: 23.2px;
+  letter-spacing: 0;
+  margin-top: 16px;
+  color: #FFFFFF;
+}
+@media (min-width: 768px) {
+  section.gallery-dl div.access div.text div.address {
+    font-size: 16px;
+  }
+}
+section.gallery-dl div.access div.text div.mail {
+  line-height: 23.2px;
+  letter-spacing: 0;
+  color: #FFFFFF;
+  margin-top: 20px;
+}
+section.gallery-dl div.access div.text div.map {
+  margin-top: 30px;
+}
+section.gallery-dl div.access div.text div.map a {
+  line-height: 60px;
+  letter-spacing: 0;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  padding: 15px 82px;
+}
+section.gallery-dl div.contact {
+  text-align: center;
+  margin-top: 280px;
+}
+@media (min-width: 768px) {
+  section.gallery-dl div.contact {
+    margin-top: 480px;
+  }
+}
+section.gallery-dl div.contact h2 {
+  font-size: 27px;
+  line-height: 32px;
+  letter-spacing: 0.03em;
+  color: #FFFFFF;
+  position: relative;
+  display: inline-block;
+}
+@media (min-width: 768px) {
+  section.gallery-dl div.contact h2 {
+    font-size: 60px;
+    line-height: 64px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  section.gallery-dl div.contact h2 {
+    font-size: 53px;
+    line-height: 96px;
+  }
+}
+section.gallery-dl div.contact h2::after {
+  position: absolute;
+  content: "";
+  background-color: #FFFFFF;
+  width: 100%;
+  height: 1px;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+section.gallery-dl div.contact div.exhibition {
+  margin-top: 45px;
+}
+section.gallery-dl div.contact div.exhibition a {
+  line-height: 23.2px;
+  letter-spacing: 0;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  padding: 28px 32px;
+}
+@media (min-width: 768px) {
+  section.gallery-dl div.contact div.exhibition a {
+    width: 380px;
+    position: relative;
+    padding: 27px 32px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  section.gallery-dl div.contact div.exhibition a {
+    font-size: 15px;
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  section.gallery-dl div.contact div.exhibition a::before {
+    position: absolute;
+    content: "";
+    background-color: #FFF;
+    width: 120px;
+    height: 1px;
+    right: -50px;
+    bottom: 50%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  section.gallery-dl div.contact div.exhibition a::before {
+    position: initial;
+  }
+}
+@media (min-width: 768px) {
+  section.gallery-dl div.contact div.exhibition a::after {
+    position: absolute;
+    content: "";
+    background-color: #FFF;
+    width: 15px;
+    height: 1px;
+    transform: rotate(25deg);
+    right: -50px;
+    bottom: 56%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  section.gallery-dl div.contact div.exhibition a::after {
+    position: initial;
+  }
+}
+section.gallery-dl div.contact div.forvisitor {
+  margin-top: 20px;
+}
+section.gallery-dl div.contact div.forvisitor a {
+  line-height: 23.2px;
+  letter-spacing: 0;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  padding: 27px 32px;
+}
+@media (min-width: 768px) {
+  section.gallery-dl div.contact div.forvisitor a {
+    width: 380px;
+    position: relative;
+    padding: 27px 32px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  section.gallery-dl div.contact div.forvisitor a {
+    font-size: 15px;
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  section.gallery-dl div.contact div.forvisitor a::before {
+    position: absolute;
+    content: "";
+    background-color: #FFF;
+    width: 120px;
+    height: 1px;
+    right: -50px;
+    bottom: 50%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  section.gallery-dl div.contact div.forvisitor a::before {
+    position: initial;
+  }
+}
+@media (min-width: 768px) {
+  section.gallery-dl div.contact div.forvisitor a::after {
+    position: absolute;
+    content: "";
+    background-color: #FFF;
+    width: 15px;
+    height: 1px;
+    transform: rotate(25deg);
+    right: -50px;
+    bottom: 55%;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  section.gallery-dl div.contact div.forvisitor a::after {
+    position: initial;
+  }
+}
+
+footer {
+  background-color: #050507;
+  border-top: 1px solid #FFFFFF;
+  padding: 60px 24px;
+}
+@media (min-width: 768px) {
+  footer {
+    padding: 80px 30px;
+  }
+}
+@media (min-width: 768px) {
+  footer div.footerin {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  footer div.footerin {
+    display: block;
+  }
+}
+footer div.footerin div.information div.address {
+  font-size: 12px;
+  line-height: 19.2px;
+  letter-spacing: 0;
+  color: #FFFFFF;
+}
+footer div.footerin div.information div.sns {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+@media (min-width: 768px) {
+  footer div.footerin div.information div.sns {
+    margin-top: 30px;
+  }
+}
+footer div.footerin div.information div.sns div.item a {
+  font-size: 12px;
+  line-height: 25.6px;
+  letter-spacing: 0;
+  color: #FFFFFF;
+}
+@media (min-width: 768px) {
+  footer div.footerin div.information div.sns div.item a {
+    font-size: 14px;
+  }
+}
+footer div.footerin div.link {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 16px;
+}
+footer div.footerin div.link div.policy a {
+  font-size: 12px;
+  line-height: 25.6px;
+  letter-spacing: 0;
+  color: #FFFFFF;
+}
+footer div.footerin div.link div.copyright {
+  font-size: 12px;
+  line-height: 25.6px;
+  letter-spacing: 0;
+  color: #FFFFFF;
+}
+
+div.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  div.sidebar {
+    opacity: 0;
+    position: fixed;
+    right: -150px;
+    bottom: 23%;
+    transform: rotate(-90deg);
+    transition: 0.6s;
+  }
+}
+@media (min-width: 768px) and (max-width: 991.98px) {
+  div.sidebar {
+    display: none;
+  }
+}
+div.sidebar div.link {
+  display: flex;
+}
+div.sidebar div.link div.item a {
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 16px;
+  color: #FFFFFF;
+  border: 1px solid #FFFFFF;
+  display: inline-block;
+  padding: 15px 38px;
+}
+div.sidebar.fade {
+  opacity: 1;
+}/*# sourceMappingURL=style.css.map */
