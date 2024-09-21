@@ -726,6 +726,7 @@ div.sidebar {
 }
 @media (min-width: 768px) {
   div.sidebar {
+    display: block;
     opacity: 0;
     position: fixed;
     right: -150px;
